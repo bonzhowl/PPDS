@@ -15,7 +15,7 @@
         </div>
 <!-- jumlah ppds lulus -->
         <div class="col-lg-3 col-6">
-          <div class="small-box bg-success">
+          <div class="small-box bg-success" onclick="showLulus()">
             <div class="inner">
               <p><h2><?=$jumlah_ppds[0]['TOTAL']?> Orang</h2></p>
               <h3><?=$jumlah_ppds[0]['STATUS']?> Lulus</h3>
@@ -81,7 +81,7 @@
 </section>
 
 <div class="modal fade" id="myModalprodi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Daftar Program Studi</h4>
@@ -90,7 +90,7 @@
             
         <div class="modal-body">
             <div class="card-body">
-              <div class="table-responsive">
+              <!-- <div class="table-responsive"> -->
                 <table class="table table-bordered table-striped">
                   <thead>
                     <tr>
@@ -106,6 +106,47 @@
                     <tr>
                       <td><?=$prodi['KD_PRODI']?></td>
                       <td><?=$prodi['BAGIAN']?></td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+               </table>
+              <!-- </div> -->
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModallulus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Daftar PPDS Lulus</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+            
+        <div class="modal-body">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th class="bg-info">Nama</th>
+                      <th class="bg-info">NPM</th>  
+                      <th class="bg-info">Periode Lulus</th>  
+                    </tr>
+                  </thead>
+                    <tbody>
+                    <?php
+                    foreach ($datalulus as $lulus)
+                    {
+                    ?>
+                    <tr>
+                      <td><?=$lulus['NAMA']?></td>
+                      <td><?=$lulus['NPM']?></td>
+                      <td><?=$lulus['PER_LULUS']?></td>
                     </tr>
                     <?php
                     }
@@ -231,6 +272,11 @@ $(function () {
 
 function showProdi(){
     $('#myModalprodi').modal({backdrop: 'static', keyoboard:'false'})
+    
+  }
+
+function showLulus(){
+    $('#myModallulus').modal({backdrop: 'static', keyoboard:'false'})
     
   }
 </script>

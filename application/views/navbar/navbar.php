@@ -11,8 +11,8 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <a href="<?=base_url()?>login/logout" class="dropdown-item dropdown-footer">
-              <i class="fas fa-arrow-circle-right" ></i> 
+        <a href="<?=base_url()?>login/logout" class="dropdown-item dropdown-footer" onclick="return confirm('Yakin Akan Keluar?')">
+              <i class="fas fa-arrow-circle-right"></i> 
               Logout
                <span class="float-right text-muted text-sm"></span>
       </a>
