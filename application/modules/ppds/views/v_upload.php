@@ -39,10 +39,10 @@ if ($this->session->userdata('message'))
                 <thead>
                   <tr>
                     <th class="bg-info">ID PPDS</th>
-                    <th class="bg-info">NPM</th>   
+                    <th class="bg-info">NPM</th>
                     <th class="bg-info">NAMA</th>
                     <th class="bg-info">PERSONAL FILE</th>
-                    <th class="bg-info">Upload</th>                  
+                    <th class="bg-info">Upload</th>
                   </tr>
                 </thead>
                     <tbody>
@@ -55,10 +55,8 @@ if ($this->session->userdata('message'))
                           <td><?=$data->ID_PPDS?></td>
                           <td><?=$data->NPM?></td>
                           <td><?=$data->NAMA?></td>
-                          <td><?=$data->UP_FILE?></td>
-                          <td><?php
-                      echo form_open_multipart('ppds/upload/aksi_upload');
-                      ?>
+                          <td class="nav-icon far fa-trash-alt float-right"><?=$data->UP_FILE?></td>
+                          <td><?php echo form_open_multipart('ppds/upload/aksi_upload');?>
                         <?php
                         if ($data->UP_FILE == null)
                         {?>

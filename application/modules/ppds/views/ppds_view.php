@@ -129,10 +129,10 @@
 		                              ?>
 		                              <tr>		                                
 		                               	<?php if ($akses ==1){ ?>
-		                               	<td class>	
-		                               		<?php echo anchor('Ppds/view_update/'.$data->ID_PPDS," <i class='nav-icon fas fa-edit'></i>");?>
+		                               	<td>	
+		                               		<?php echo anchor('Ppds/view_update/'.$data->ID_PPDS," <i class='nav-icon far fa-edit'></i>");?>
 		                             				 &nbsp;
-		                                   <a href=# onclick="delete_ID('<?=$data->ID_PPDS?>')"><i class='nav-icon fas fa-trash'></i></a>
+		                                   <a href=# onclick="delete_ID('<?=$data->ID_PPDS?>')"><i class='nav-icon far fa-trash-alt'></i></a>
 		                             			<?php	 
 		                             				 }
 		                             				 else

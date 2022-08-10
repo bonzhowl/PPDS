@@ -38,10 +38,12 @@ class Dashboard extends MX_Controller
     // data ppds & prodi
     $data['jumlah_ppds'] = $this->M_dashboard->get_jumlah_ppds();
     $data['jumlah_prodi'] = $this->M_dashboard->get_jumlah_prodi();
-    $data['jumlah_ppds_prodi'] = $this->M_dashboard->get_jumlah_ppds_prodi();
+    $data['jumlahppdsAktif'] = $this->M_dashboard->getjumlahppdsAktif();
+    $data['jumlahppdsLulus'] = $this->M_dashboard->getjumlahppdsLulus();
     $data['dataprodi'] = $this->M_dashboard->getdataprodi();
-    $data['datalulus'] = $this->M_dashboard->getdata();
-              // var_dump($data['jumlah_ppds_prodi']);
+    $data['datalulus'] = $this->M_dashboard->getdatalulus();
+    $data['dataaktif'] = $this->M_dashboard->getdataaktif();
+                  // var_dump($data['jumlah_ppds_prodi']);
               // exit;
  		$this->load->view('template',$data);
  	}

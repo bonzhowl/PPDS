@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+  <link rel="shortcut icon" href="#">
+
 <!-- jQuery -->
 <script src="<?=base_url()?>assets/vendor/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
