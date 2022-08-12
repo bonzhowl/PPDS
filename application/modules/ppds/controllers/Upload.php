@@ -21,8 +21,9 @@ class Upload extends CI_Controller
         $config['upload_path']          = './personal_file/'; //folder upload
         $config['allowed_types']        = 'pdf|PDF'; // jenis file
         $config['max_size']             = 10000; // ukuran file
-        $config['encrypt_name']         = TRUE; // acak nama file yg di upload
+        // $config['encrypt_name']         = TRUE; // acak nama file yg di upload
         // $config['file_name']         = TRUE; // acak nama file yg di upload
+        
 
         $this->load->library('upload', $config);
         $ID_PPDS=$this->input->post('id_ppds');

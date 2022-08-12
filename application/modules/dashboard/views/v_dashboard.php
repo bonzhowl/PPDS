@@ -69,41 +69,6 @@
           </div>
         </div>
       </div>
-
-<!-- tes chart pie -->
-      <div class="container">
-        <div class="page-header" align=" center">
-            <h2 >Membuat Grafik Pie Persentase (%) dengan Chart.js dan PHP</h2>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><b>Data Produk</b></div>
-                    <div class="panel-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nama Produk</th>
-                                    <th>Jml Item</th>
-                                </tr>
-                            </thead>
-                            <tbody id="DatatTabelProduk">                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><b>Grafik Data</b></div>
-                    <div class="panel-body">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                </div>                
-            </div>
-        </div>
-    </div>
 <!-- PIE CHART -->
 <!-- <div class="card card-danger">
     <div class="card-header">
@@ -258,6 +223,8 @@
     </div>
   </div>
 </div>
+
+
 
 <script>
  /* global Chart:false */
@@ -478,6 +445,7 @@ $(function () {
 
 function showAktif() {
     $('#myModalaktif').modal({backdrop: 'static', keyoboard:'false'})
+
 }
 
 function showProdi(){
@@ -489,73 +457,6 @@ function showLulus(){
     $('#myModallulus').modal({backdrop: 'static', keyoboard:'false'})
     
   }
-
-
-// pie chart
-  $.getJSON( "http://localhost:/chart-pie/v_dashboard.php", function( data ) {
-    var TabelData="";
-    $(data).each(function(i){ 
-        TabelData +="<tr><td>"+data[i].NamaProduk+"</td><td>"+data[i].JmlItem+"</td></tr>"; 
-    });
-    //tampilkan di tabel id DataTabelProduk
-    $("#DatatTabelProduk").html(TabelData);
-
-    //array untuk chart label dan chart data
-    var isi_labels = [];
-    var isi_data=[];
-    var TotalJml = 0;
-    //menghitung total jumlah item
-    data.forEach(function (obj) {
-        TotalJml += Number(obj["JmlItem"]);
-    });
-
-    //push ke dalam array isi label dan isi data
-    var JmlItem = 0;
-    $(data).each(function(i){         
-        isi_labels.push(data[i].NamaProduk); 
-        //jml item dalam persentase
-        isi_data.push(((data[i].JmlItem/TotalJml) * 100).toFixed(2));
-    });
-
-    //deklarasi chartjs untuk membuat grafik 2d di id mychart   
-    var ctx = document.getElementById('myChart').getContext('2d');
-
-    var myPieChart = new Chart(ctx, {
-        //chart akan ditampilkan sebagai pie chart
-        type: 'pie',
-        data: {
-            //membuat label chart
-            labels: isi_labels,
-            datasets: [{
-                label: 'Data Produk',
-                //isi chart
-                data: isi_data,
-                //membuat warna pada chart
-                backgroundColor: [
-                    'rgb(26, 214, 13)',
-                    'rgb(235, 52, 110)',
-                    'rgb(52, 82, 235)',
-                    'rgb(138, 4, 113)',
-                    'rgb(214, 134, 13)'
-                ],
-                //borderWidth: 0, //this will hide border
-            }]
-        },
-        options: {
-            //konfigurasi tooltip
-            tooltips: {
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        var dataset = data.datasets[tooltipItem.datasetIndex];
-                        var labels = data.labels[tooltipItem.index];
-                        var currentValue = dataset.data[tooltipItem.index];
-                        return labels+": "+currentValue+" %";
-                    }
-                }
-            }
-          }
-    });
-});
 </script>
 <script src="<?=base_url()?>assets/vendor/adminlte/plugins/chart.js/Chart.min.js"></script>
 <!-- <script src="../../plugins/chart.js/Chart.min.js"></script> -->

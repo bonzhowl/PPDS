@@ -32,8 +32,8 @@
                   <tr>
                     <th class="bg-info">ID PPDS</th>
                     <th class="bg-info">NPM</th>   
-                    <th class="bg-info">NAMA</th>
-                    <th class="bg-info">PERSONAL FILE</th>
+                    <th class="bg-info">Nama</th>
+                    <th class="bg-info">Personal File</th>
                   </tr>
                 </thead>
                     <tbody>

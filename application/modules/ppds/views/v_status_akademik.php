@@ -31,11 +31,11 @@ if ($this->session->userdata('message'))
                     <?php endif?>
                     <th class="bg-info" hidden>ID PPDS</th>
                     <th class="bg-info">NPM</th>   
-                    <th class="bg-info">NAMA</th>
-                    <th class="bg-info">LEVEL KOMPETENSI</th>
-                    <th class="bg-info">PERIODE MASUK</th>
-                    <th class="bg-info">PERIODE LULUS</th>
-                    <th class="bg-info">STATUS</th>
+                    <th class="bg-info">Nama</th>
+                    <th class="bg-info">Level Kompetensi</th>
+                    <th class="bg-info">Periode Masuk</th>
+                    <th class="bg-info">Periode Lulus</th>
+                    <th class="bg-info">Status</th>
                   </tr>
                 </thead>
                     <tbody>
